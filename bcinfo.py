@@ -18,7 +18,7 @@
 # crontab for the "pi" user, like:
 #
 # # check bettercap every 5 minutes:
-# */5 *  *   *   *     /home/brian/bcinfo.py -w -q >/dev/null 2>/dev/null#
+# */5 *  *   *   *     /home/pi/bin/bcinfo.py -w -q >/dev/null 2>/dev/null#
 #
 
 import time
