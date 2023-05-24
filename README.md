@@ -19,6 +19,7 @@ options:
 To keep bettercap wifi.recon running, even if bettercap crashes and restarts, add to
 crontab for the "pi" user, like:
 
-# check bettercap every 10 minutes:
-*/10 *  *   *   *     /home/brian/bcinfo.py -w -q >/dev/null 2>/dev/null#
+<code># check bettercap every 10 minutes:
+*/10 *  *   *   *     /home/pi/bin/bcinfo.py -w -q >/dev/null 2>/dev/null
+</code>
 
