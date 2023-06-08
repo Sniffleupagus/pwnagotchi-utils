@@ -1,7 +1,7 @@
 # pwnagotchi-utils
 Utilities to support pwnagotchi
 
-bcinfo.py
+- bcinfo.py
 
 bettercap info fetcher, also restarts wifi.recon if it isn't running
 bcinfo.py connects to the bettercap API, so does not need to run as root.
@@ -23,3 +23,19 @@ crontab for the "pi" user, like:
 */10 *  *   *   *     /home/pi/bin/bcinfo.py -w -q >/dev/null 2>/dev/null
 </code>
 
+
+- bccmd.py
+
+send commands to bettercap. either on the command line, or as input with -i. -q for quiet
+
+<code>bccmd.py wifi.recon off
+echo "wifi.recon off" | bccmd.py -i
+bccmd.py -iq <<EOS
+wifi.recon off
+wifi.clear
+EOS</code>
+
+- fix_mon0
+
+shell script that uses bccmd.py and /usr/bin/pwnlib to pause bettercap wifi.recon, reload the
+wifi driver and mon0, then continue wifi.recon
