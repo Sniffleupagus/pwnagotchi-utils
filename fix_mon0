@@ -1,0 +1,8 @@
+#!/bin/bash
+
+/home/pi/bin/bccmd.py -iq <<EOF
+wifi.recon off
+wifi.clear
+EOF
+sudo bash -c "source /usr/bin/pwnlib; reload_brcm; sleep 2; start_monitor_interface"
+/home/pi/bin/bccmd.py -q wifi.recon on
