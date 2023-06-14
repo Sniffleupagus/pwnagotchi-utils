@@ -60,7 +60,7 @@ def print_item(name, item, prefix=""):
             #print("%s<%i> %s" % (prefix, i, key))
             print_item("{%i}" % (i), key, "  %s %s" % (" " * len(prefix), name))
 
-        if (prefix is ""): 
+        if (prefix == ""): 
             print("%s[%s END]" % (prefix, name))
 
     elif type(item) is dict: 
@@ -187,7 +187,7 @@ def main():
             print("[End %s]" % session)
         
         apcount = 0
-        if ("aps" in sess and len(sess["aps"]) is 0) or ("wifi" in sess and len(sess["wifi"]["aps"]) is 0):
+        if ("aps" in sess and len(sess["aps"]) == 0) or ("wifi" in sess and len(sess["wifi"]["aps"]) == 0):
             # no aps seen, so try turning it on, just in case
             result = connection.run("wifi.recon on")
             print("Turned it back on: %s" % repr(result))
