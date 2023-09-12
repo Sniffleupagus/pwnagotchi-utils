@@ -172,7 +172,7 @@ def main():
     #print("Got Here!")
 
     try:
-        sess = connection.session(session)
+        sess = connection.session()
     except Exception as err:
         print(err)
         sys.exit(3)
